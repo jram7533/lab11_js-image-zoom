@@ -1,0 +1,53 @@
+<!-- index.html
+  Author:           
+  Date:         
+  Last rev:     
+  Description:  Using mouse events to dynamically modify
+                an image's size on a web page
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="author" content="">
+  <meta name="date" content="">
+  <meta name="last rev" content="">
+  <meta name="description" content="Dynamic image zoom with JS ">
+  <meta name="keywords" content="js, mouse, scroll, click, zoom">
+  <title>Mouse Zoom</title>
+
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <span class="info">&#9432;</span>
+  <div id="info-div">
+    <p>
+      Our script here will reset the zoom level to '1' whenever the user clicks the right or left mouse button. It turns out, mixing the <span class="mono">zoom</span> &amp; <span class="mono">width</span> properties results in unpredictible displays. The JavaScript still, because ... math ... rounds things a little funny, but 5 pixels here or there isn't really noticeable
+    </p>
+    <p>
+      Notice that <span class="mono">zoom</span> doesn't rearrange the display, but changing the <span class="mono">width</span> does
+    </p>
+  </div>
+  <div class="container">
+    
+    <h1>Image Zoom</h1>
+    <p>
+      We can use mouse events such as left/right clicks or scroll wheel movements to modify the display of an image. Two CSS properties that we'll modify dynamically are <span class="mono">width</span> and <span class="mono">zoom</span>
+    </p>
+
+    <img src="images/001.jpg" alt="image" style="width: 300px;">
+    
+    <p>
+      In our JavaScript, we'll define event listeners to respond to left-clicks, right-clicks, and scroll wheel movements. We have to be careful, though, to ensure that the maximum ranges for the zoom events don't end up with the image overlaying this text
+    </p>
+
+    <p class="scale">
+      Scale: 1.000x<br>
+      Width: <script>document.write(document.querySelector("img").width)</script>px
+    </p>
+  </div>
+
+  <script src="js/app.js"></script>
+</body>
+</html>
